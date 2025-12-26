@@ -15,22 +15,18 @@ products.forEach((product)=>{
  if(product.id===productId){
     matchingProduct = product;
  }
-})
-const deliveryOptionId = cartItem;
-deliveryOptionId;
+});
+const deliveryOptionId = cartItem.deliveryOptionId;
+let deliveryOption;
 deliveryOptions.forEach((option)=>{
 if(option.id===deliveryOptionId){
-  deliveryOptionId = option;
-}
-});
-
-deliveryOptions.forEach((deliveryOptions)=>{
-  const today = dayjs();
-  const deliveryDate  = today.add(
-    deliveryOptions.deliveryDays,
-    'days'
-  );
-});
+  deliveryOption = option;
+}});
+const today = dayjs();
+const deliveryDate  = today.add(
+  deliveryOption.deliveryDays,
+  'days'
+);
 const dateString=deliveryDate.format('dddd, MMMM, D');
 
 cartSummeryHtml += `
